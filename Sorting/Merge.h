@@ -5,7 +5,7 @@
 
 // (array, segment 1 begin, segment 2 begin, segment 2 end) Sort and merge two arrays
 template <class DataType>
-void merge(List<DataType> link, unsigned int begin, unsigned int center, unsigned int end)
+void merge(List<DataType> &link, unsigned int begin, unsigned int center, unsigned int end)
 {
 	//segment 1 index, segment 2 index, combined index
 	unsigned int i1 = 0, i2 = 0, iC = begin;
@@ -40,7 +40,7 @@ void merge(List<DataType> link, unsigned int begin, unsigned int center, unsigne
 
 // (array, begin range, end range) Sort segments of array
 template <class DataType>
-void sortMerge(List<DataType> link, unsigned int begin, unsigned int end)
+void sortMerge(List<DataType> &link, unsigned int begin, unsigned int end)
 {
 	if (begin < end)
 	{
@@ -56,7 +56,7 @@ void sortMerge(List<DataType> link, unsigned int begin, unsigned int end)
 
 // (array, size) initialize merge sort of an array
 template <class DataType>
-void sortMerge(List<DataType> link)
+void sortMerge(List<DataType> &link)
 {
 	unsigned int size = link.getSize();
 

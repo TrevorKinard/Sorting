@@ -22,10 +22,14 @@ void autoTest()
 
 	sortSelect(test1);
 	std::cout << "Sorted array: \n";
-	for (unsigned int c = 0; test1.location(c) != nullptr; c++)
+	auto current = test1.getHead();
+	while (current != nullptr)
 	{
-		std::cout << test1.location(c)->data << " -> ";
+		std::cout << current->data << " -> ";
+		current = current->nextNode;
 	}
+
+	test1.~List();
 
 	//Merge sort
 	List<int> test2 = List<int>();
@@ -41,6 +45,8 @@ void autoTest()
 	{
 		std::cout << test2.location(c)->data << " -> ";
 	}
+
+	test2.~List();
 
 	system("pause");
 }
